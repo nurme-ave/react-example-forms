@@ -7,18 +7,20 @@ function Form() {
     firstName: "",
     lastName: "",
     email: "",
-    comments: ""
+    comments: "",
+    isFriendly: true
   });
   
+  console.log(formData)
   
   function handleChange(e) {
+    const { name, value, type, checked } = e.target;
     setFormData(prevFormData => {
       return {
         ...prevFormData,
-        [e.target.name]: e.target.value,
+        [name]: type === "text" ? value : checked
       }
     })
-    console.log(formData)
   }
   
   return (
@@ -50,6 +52,41 @@ function Form() {
         name="comments"
         value={formData.comments}
       />
+      <div className="checkbox">
+        <input 
+          type="checkbox"
+          id="isFriendly"
+          onChange={handleChange}
+          name="isFriendly"
+          checked={formData.isFriendly}
+        />
+        <label htmlFor="isFriendly">Are you friendly?</label>
+      </div>
+      <fieldset>
+        <legend>Current employment status</legend>
+        
+        <input 
+            type="radio"
+            id="unemployed"
+        />
+        <label htmlFor="unemployed">Unemployed</label>
+        <br />
+        
+        <input 
+            type="radio"
+            id="part-time"
+        />
+        <label htmlFor="part-time">Part-time</label>
+        <br />
+        
+        <input 
+            type="radio"
+            id="full-time"
+        />
+        <label htmlFor="full-time">Full-time</label>
+        <br />
+        
+      </fieldset>
     </form>
   )
 }
