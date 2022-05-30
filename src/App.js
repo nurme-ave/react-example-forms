@@ -1,9 +1,10 @@
 import './App.css';
+import Form from './components/Form';
 
 function App() {
   return (
     <main className="main-container">
-      <h1>Test Text</h1>
+      <Form />
     </main>
   );
 }

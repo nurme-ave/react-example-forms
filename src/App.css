@@ -4,5 +4,17 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(135, 216, 246);
+  background-color: rgb(47, 47, 138);
+}
+
+input {
+  height: 3em;
+  border: none;
+  border-radius: .5em;
+  text-indent: 1em;
+}
+
+input:focus {
+  border: 1px solid yellow;
+  outline: 0;
 }
