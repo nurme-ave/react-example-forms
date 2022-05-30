@@ -24,7 +24,6 @@ function Form() {
         [name]: type === "checkbox" ? checked : value
       }
     })
-    console.log(formData)
   }
 
   function handleSubmit(e) {
