@@ -27,9 +27,14 @@ function Form() {
       }
     })
   }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    console.log('Form submitted - thank you!')
+  }
   
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input 
         type="text"
         placeholder="First Name"
@@ -119,7 +124,7 @@ function Form() {
           { optionsEl }
         </select>
       </div>
-      <submit>Submit</submit>
+      <button className="submit-button">Submit</button>
     </form>
   )
 }

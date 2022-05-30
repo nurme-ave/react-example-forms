@@ -76,19 +76,19 @@ fieldset {
   outline: 0;
 }
 
-submit {
+.submit-button {
   width: 7em;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 1em;
-  border-radius: .25em;
+  border-radius: .5em;
   background-color: lightpink;
   cursor: pointer;
 }
 
-submit:active {
+.submit-button:active {
   background-color: #fff;
   transform: scale(1.05);
 }
