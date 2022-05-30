@@ -7,10 +7,16 @@ function Form() {
     email: "",
     comments: "",
     isFriendly: true,
-    employment: ""
+    employment: "",
+    favColor: ""
   });
   
   console.log(formData)
+
+  const optionsArr = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+  const optionsEl = optionsArr.map((option) => {
+    return <option value={option}>{option.charAt(0).toUpperCase() + option.slice(1).toLowerCase()}</option>;
+  })
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
@@ -99,6 +105,20 @@ function Form() {
         <label htmlFor="full-time">Full-time</label>
         <br />
       </fieldset>
+
+      <div className="select">
+        <label htmlFor="favColor">What is your favorite color?</label>
+        <select 
+          id="favColor"
+          value={formData.favouriteColor}
+          onChange={handleChange}
+          name="favColor"
+          className="options"
+        >
+          <option value="">--Select--</option>
+          { optionsEl }
+        </select>
+      </div>
     </form>
   )
 }

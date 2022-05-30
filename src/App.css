@@ -57,3 +57,21 @@ fieldset {
   padding: 1em;
   color: #fff;
 }
+
+.select {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  color: #fff;
+}
+
+.options {
+  height: 2.5em;
+  text-indent: .75em;
+  border-radius: .25em;
+}
+
+.options:focus {
+  text-indent: .75em;
+  outline: 0;
+}
