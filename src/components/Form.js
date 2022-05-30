@@ -6,18 +6,16 @@ function Form() {
     lastName: "",
     email: "",
     comments: "",
-    isFriendly: true,
-    employment: "",
-    favColor: ""
+    numberOfPeople: "",
+    cuisine: "",
+    joinNewsletter: false
   });
   
-  console.log(formData)
-
-  const optionsArr = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+  const optionsArr = ["Italian", "Japanese", "Chinese", "Indian", "American"];
   const optionsEl = optionsArr.map((option) => {
-    return <option value={option}>{option.charAt(0).toUpperCase() + option.slice(1).toLowerCase()}</option>;
+    return <option key={option} value={option.toLowerCase()}>{option}</option>;
   })
-
+  
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
     setFormData(prevFormData => {
@@ -26,11 +24,13 @@ function Form() {
         [name]: type === "checkbox" ? checked : value
       }
     })
+    console.log(formData)
   }
 
   function handleSubmit(e) {
     e.preventDefault()
     console.log('Form submitted - thank you!')
+    console.log(formData)
   }
   
   return (
@@ -66,63 +66,63 @@ function Form() {
         value={formData.comments}
       />
 
-      <div className="checkbox">
-        <input 
-          type="checkbox"
-          id="isFriendly"
-          onChange={handleChange}
-          name="isFriendly"
-          checked={formData.isFriendly}
-        />
-        <label htmlFor="isFriendly">Are you friendly?</label>
-      </div>
-
       <fieldset>
-        <legend>Current employment status</legend>
+        <legend>Number of people</legend>
         <input 
             type="radio"
-            id="unemployed"
+            id="1-2"
             onChange={handleChange}
-            name="employment"
-            value="unemployed"
-            checked={formData.employment === "unemployed"}
+            name="numberOfPeople"
+            value="1-2"
+            checked={formData.numberOfPeople === "1-2"}
         />
-        <label htmlFor="unemployed">Unemployed</label>
+        <label htmlFor="1-2">1-2</label>
         <br />
         <input 
             type="radio"
-            id="part-time"
+            id="3-5"
             onChange={handleChange}
-            name="employment"
-            value="part-time"
-            checked={formData.employment === "part-time"}
+            name="numberOfPeople"
+            value="3-5"
+            checked={formData.numberOfPeople === "3-5"}
         />
-        <label htmlFor="part-time">Part-time</label>
+        <label htmlFor="3-5">3-5</label>
         <br />
         <input 
             type="radio"
-            id="full-time"
+            id="moreThanFive"
             onChange={handleChange}
-            name="employment"
-            value="full-time"
-            checked={formData.employment === "full-time"}
+            name="numberOfPeople"
+            value="moreThanFive"
+            checked={formData.numberOfPeople === "moreThanFive"}
         />
-        <label htmlFor="full-time">Full-time</label>
+        <label htmlFor="moreThanFive">More than 5</label>
         <br />
       </fieldset>
 
       <div className="select">
-        <label htmlFor="favColor">What is your favorite color?</label>
+        <label htmlFor="cuisine">Select your cuisine:</label>
         <select 
-          id="favColor"
-          value={formData.favouriteColor}
+          id="cuisine"
+          value={formData.cuisine}
           onChange={handleChange}
-          name="favColor"
+          name="cuisine"
           className="options"
         >
-          <option value="">--Select--</option>
+          <option value="">-- Select --</option>
           { optionsEl }
         </select>
+      </div>
+
+      <div className="checkbox">
+        <input 
+          type="checkbox"
+          id="joinNewsletter"
+          onChange={handleChange}
+          name="joinNewsletter"
+          checked={formData.joinNewsletter}
+        />
+        <label htmlFor="joinNewsletter">Join our newsletter? <span className="spam-promise">(we promise not to spam)</span></label>
       </div>
       <button className="submit-button">Submit</button>
     </form>
