@@ -119,6 +119,7 @@ function Form() {
           { optionsEl }
         </select>
       </div>
+      <submit>Submit</submit>
     </form>
   )
 }

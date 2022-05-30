@@ -1,10 +1,10 @@
 .main-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 100vw;
   height: 100vh;
-  padding-top: 5em;
+  /* padding-top: 3em; */
   background-color: rgb(47, 47, 138);
 }
 
@@ -74,4 +74,21 @@ fieldset {
 .options:focus {
   text-indent: .75em;
   outline: 0;
+}
+
+submit {
+  width: 7em;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1em;
+  border-radius: .25em;
+  background-color: lightpink;
+  cursor: pointer;
+}
+
+submit:active {
+  background-color: #fff;
+  transform: scale(1.05);
 }
