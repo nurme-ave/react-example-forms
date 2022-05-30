@@ -1,23 +1,26 @@
 import { useState } from 'react';
 
+
+
 function Form() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
-    email: ""
+    email: "",
+    comments: ""
   });
-
-  console.log(formData);
-
+  
+  
   function handleChange(e) {
     setFormData(prevFormData => {
       return {
         ...prevFormData,
-        [e.target.name]: e.target.value
+        [e.target.name]: e.target.value,
       }
     })
+    console.log(formData)
   }
-
+  
   return (
     <form>
       <input 
@@ -40,6 +43,12 @@ function Form() {
         onChange={handleChange}
         name="email"
         value={formData.email}
+      />
+      <textarea
+        placeholder="Comments"
+        onChange={handleChange}
+        name="comments"
+        value={formData.comments}
       />
     </form>
   )
