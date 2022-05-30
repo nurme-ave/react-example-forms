@@ -16,12 +16,14 @@ form {
 
 input {
   height: 3em;
+  width: 15em;
+  text-align: center;
   border: none;
   border-radius: .5em;
-  text-indent: 1em;
 }
 
 input:focus {
-  border: 1px solid yellow;
+  background-color: rgb(234, 238, 240);
+  box-shadow: .10em .05em .10em rgba(234, 238, 240, .9);
   outline: 0;
 }
