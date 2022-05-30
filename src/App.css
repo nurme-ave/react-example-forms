@@ -1,9 +1,10 @@
 .main-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100vw;
   height: 100vh;
+  padding-top: 5em;
   background-color: rgb(47, 47, 138);
 }
 

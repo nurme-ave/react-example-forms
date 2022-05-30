@@ -3,8 +3,11 @@ import { useState } from 'react';
 function Form() {
   const [formData, setFormData] = useState({
     firstName: "",
-    lastName: ""
+    lastName: "",
+    email: ""
   });
+
+  console.log(formData);
 
   function handleChange(e) {
     setFormData(prevFormData => {
@@ -28,6 +31,12 @@ function Form() {
         placeholder="Last Name"
         onChange={handleChange}
         name="lastName"
+      />
+      <input 
+        type="email"
+        placeholder="Email"
+        onChange={handleChange}
+        name="email"
       />
     </form>
   )
