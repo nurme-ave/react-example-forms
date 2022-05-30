@@ -1,10 +1,18 @@
 import { useState } from 'react';
 
 function Form() {
-  const [firstName, setFirstName] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: ""
+  });
 
-  function handleChange() {
-    console.log("Changed!");
+  function handleChange(e) {
+    setFormData(prevFormData => {
+      return {
+        ...prevFormData,
+        [e.target.name]: e.target.value
+      }
+    })
   }
 
   return (
@@ -13,6 +21,13 @@ function Form() {
         type="text"
         placeholder="First Name"
         onChange={handleChange}
+        name="firstName"
+      />
+      <input 
+        type="text"
+        placeholder="Last Name"
+        onChange={handleChange}
+        name="lastName"
       />
     </form>
   )

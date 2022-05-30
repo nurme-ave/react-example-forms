@@ -7,6 +7,12 @@
   background-color: rgb(47, 47, 138);
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
 input {
   height: 3em;
   border: none;
